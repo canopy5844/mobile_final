@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailActivity">
+    <!-- 상단 필터링 영역 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/back_to_main"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="back"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/image_detail"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:contentDescription="image"
+        android:scaleType="centerCrop" />
+
+    <Button
+        android:id="@+id/btn_save_local"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="save local" />
+
+    <TextView
+        android:id="@+id/text_date"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="10dp" />
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="10dp" />
+
+    <TextView
+        android:id="@+id/text_article_body"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="10dp" />
+</LinearLayout>

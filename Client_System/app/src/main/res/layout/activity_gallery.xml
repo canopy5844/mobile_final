@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 상단 필터링 영역 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 검색어 입력 영역 -->
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="검색어를 입력하세요"
+            android:padding="8dp"
+            android:background="@android:drawable/editbox_background"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray"
+            android:layout_marginBottom="8dp" />
+
+        <!-- 날짜 선택 영역 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <!-- 날짜 입력들 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <!-- 연도 입력 -->
+                <EditText
+                    android:id="@+id/yearEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1.2"
+                    android:hint="연도"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:layout_marginEnd="4dp"
+                    android:minHeight="48dp"
+                    android:padding="8dp" />
+
+                <!-- 월 입력 -->
+                <EditText
+                    android:id="@+id/monthEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:hint="월"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:layout_marginEnd="4dp"
+                    android:minHeight="48dp"
+                    android:padding="8dp" />
+
+                <!-- 일 입력 -->
+                <EditText
+                    android:id="@+id/dayEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:hint="일"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:layout_marginEnd="4dp"
+                    android:minHeight="48dp"
+                    android:padding="8dp" />
+
+                <!-- 캘린더 버튼 -->
+                <ImageButton
+                    android:id="@+id/calendarButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@android:drawable/ic_menu_my_calendar"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:contentDescription="달력 열기"
+                    app:tint="@android:color/darker_gray" />
+            </LinearLayout>
+
+            <!-- 검색 버튼 -->
+            <Button
+                android:id="@+id/searchButton"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Search"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <!-- 로그 버튼과 전체기간 체크박스 영역 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <!-- 왼쪽 공간 -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+            <!-- 전체기간 체크박스 -->
+            <CheckBox
+                android:id="@+id/allPeriodCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp"
+                android:text="전체기간" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 이미지 그리드 영역 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="이미지 목록"
+        android:importantForAccessibility="yes">
+
+        <LinearLayout
+            android:id="@+id/imageContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 이미지 행 템플릿 (Java에서 동적으로 추가됨) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:minHeight="120dp"
+                    android:padding="1dp"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:minHeight="120dp"
+                    android:padding="1dp"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:minHeight="120dp"
+                    android:padding="1dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
